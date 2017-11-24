@@ -2,9 +2,9 @@
 
 ## Commit Proposal
 
-Matriculation Number: <to be filled by student>
+Matriculation Number: 16-660-805
 
-Project idea short description: 
+Project idea short description: Socrative Light, as described in [here](https://github.com/WebEngineering-FHNW/hs17-bewertete-uebung-stueliueli/blob/master/docs/exercise/socrative-light.md)
 
 
 ## Project confirmation
