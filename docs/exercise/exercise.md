@@ -9,7 +9,7 @@ Project idea short description: Socrative Light, as described in [here](https://
 
 ## Project confirmation
 
-< to be filled by lecturer>
+confirmed.
 
 
 ## Project delivery <to be filled by student>
