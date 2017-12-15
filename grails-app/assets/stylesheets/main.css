@@ -36,9 +36,9 @@ body {
     background: #ffffff;
     color: #333333;
     overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
-    -moz-box-shadow: 0 0 0.3em #4D8618;
-    -webkit-box-shadow: 0 0 0.3em #4D8618;
-    box-shadow: 0 0 0.3em #4D8618;
+    -moz-box-shadow: 0 0 0.3em #32A0BF;
+    -webkit-box-shadow: 0 0 0.3em #32A0BF;
+    box-shadow: 0 0 0.3em #32A0BF;
 }
 
 #grailsLogo {
@@ -84,7 +84,7 @@ img {
 }
 
 .footer {
-    background: #48802c;
+    background: #32A0BF;
     color: #000;
     clear: both;
     font-size: 0.8em;
@@ -94,7 +94,7 @@ img {
 }
 
 .footer a {
-    color: #4D8618;
+    color: #113540;
 }
 
 .spinner {
@@ -174,7 +174,7 @@ img {
 }
 
 .nav li.dropdown.open ul.dropdown-menu {
-    background-color: #4D8618;
+    background-color: #32A0BF;
 }
 
 /* CREATE/EDIT FORMS AND SHOW PAGES */
@@ -538,8 +538,7 @@ th:hover, tr:hover {
 }
 
 .buttons .delete, .buttons .edit, .buttons .save {
-    background-position: 0.7em center;
-    background-repeat: no-repeat;
+    background: no-repeat 0.7em center;
     text-indent: 25px;
 }
 
@@ -561,7 +560,7 @@ a.skip {
 }
 
 .grails-logo-container {
-    background:#79b94c no-repeat 50% 30%;
+    background:#32A0BF no-repeat 50% 30%;
     margin-bottom: 20px;
     color: white;
     height:300px;
@@ -571,4 +570,29 @@ a.skip {
 img.grails-logo {
     height:340px;
     margin-top:-10px;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 0.5em;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
 }

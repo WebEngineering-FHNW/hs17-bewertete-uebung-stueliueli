@@ -44,12 +44,12 @@ pre {
 
 }
 .navbar-default, .navbar-static-top {
-    background-color: #4D8618;
+    background-color: #32A0BF;
     border: 0px;
 }
 a.navbar-brand {
     color: white !important;
-    font-size: 19px !important;
+    font-size: 4em !important;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
     background-color: transparent;
@@ -173,8 +173,7 @@ a.navbar-brand {
     width: 100px;
     height: 80px;
     background-size: 95%;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background: no-repeat 50% 50%;
 }
 
 @media (min-width: 330px) {
@@ -223,8 +222,7 @@ a.navbar-brand {
 
 .event-img {
     margin: -20px -20px 20px -20px;
-    background-repeat: no-repeat;
-    background-position: 50% top;
+    background: no-repeat 50% top;
     height: 180px;
 }
 
@@ -235,7 +233,6 @@ a.navbar-brand {
 
 @media (max-width: 1010px) {
     .event-logo {
-        height: ;
     }
 
 }
