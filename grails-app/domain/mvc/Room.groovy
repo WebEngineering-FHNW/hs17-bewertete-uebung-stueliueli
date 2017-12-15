@@ -1,19 +1,10 @@
 package mvc
 
-// import grails.rest.Resource
-
-// @Resource
 class Room {
-
     String name
-    int    max
-
-    String toString() {
-        "$name ($max)"   // Groovy :-)
-    }
+    List<Question> questions = new ArrayList()
 
     static constraints = {
-        name(blank: false)
-        max(min: 1)
+        name blank: false, unique: true
     }
 }

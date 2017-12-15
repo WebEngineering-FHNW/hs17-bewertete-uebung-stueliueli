@@ -9,10 +9,10 @@
 </head>
 <body>
 
-    Layouted via safari.gsp !
+Layouted via safari.gsp !
 
 
-    <g:layoutBody/>
+<g:layoutBody/>
 
 </body>
 </html>
