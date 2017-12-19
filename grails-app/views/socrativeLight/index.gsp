@@ -2,13 +2,6 @@
     <head>
         <meta name="layout" content="main">
         <asset:javascript src="jquery-2.2.0.min.js"/>
-        <script>
-            function testCall(){
-                $.get("/api/getStuff", function(data){
-                    console.error(JSON.stringify(data));
-                })
-            }
-        </script>
     </head>
     <body>
         <table>
@@ -17,6 +10,7 @@
                     <th>Quizname</th>
                     <th>Number of questions</th>
                     <th>Start</th>
+                    <th>Statistics</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,7 +18,8 @@
                     <tr>
                         <td>${it.name}</td>
                         <td>${it.questions.size()}</td>
-                        <td><g:link controller="socrativeLight" action="view" params="[roomId:it.id, questionId:0]">Start</g:link></td>
+                        <td><g:link controller="socrativeLight" action="view" params="[roomId:it.id, questionId:0, numCorrect:0]">Start</g:link></td>
+                        <td><g:link controller="socrativeLight" action="stats" params="[roomId:it.id]">Statistics</g:link></td>
                     </tr>
                 </g:each>
             </tbody>

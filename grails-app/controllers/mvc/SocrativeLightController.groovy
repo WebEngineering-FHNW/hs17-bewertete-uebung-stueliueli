@@ -8,13 +8,32 @@ class SocrativeLightController {
     }
 
     def view(){
-        String roomId = params.get('roomId')
-        int i = Integer.parseInt(roomId)
 
+        int i = intParam(params, 'roomId')
         Room room = Room.get(i)
-        int qId = Integer.parseInt(params.get('questionId')) + 1
+        int numCorrect = intParam(params, 'numCorrect')
+
+        int qId = intParam(params, 'questionId') + 1
         if(room){
-            render view:"view", model:[name:room.name,question:room.questions.get(qId - 1),qId:qId]
+            boolean isCorrect = checkForCorrectInput(params, Question.get(qId - 1))
+            if(isCorrect)
+                numCorrect++
+
+            if(qId > room.questions.size()){
+                render view:"quizFinished",
+                        model:[name:room.name,
+                               numCorrect:numCorrect,
+                               numQuestions:room.questions.size(),
+                               lastCorrect: isCorrect]
+            }else{
+                render view:"view",
+                        model:[name:room.name,
+                               roomId:room.id,
+                               question:room.questions.get(qId - 1),
+                               qId:qId,
+                               numCorrect: numCorrect,
+                               lastCorrect: isCorrect]
+            }
         }else{
             render view:"/error"
         }
@@ -45,5 +64,31 @@ class SocrativeLightController {
 
         room.save(flush:true,failOnError:true)
         redirect(action: "index")
+    }
+
+    int intParam(param, String str){
+        String s = param.get(str)
+        if(s == null){
+            println("Param " + str + " is null!")
+            throw new IllegalArgumentException("Param " + str + " is null!")
+        }
+        try{
+            int i = Integer.parseInt(s)
+            return i
+        }catch(NumberFormatException nfe){
+            println(nfe)
+            throw new IllegalArgumentException(nfe)
+        }
+    }
+
+    boolean checkForCorrectInput(params, Question lastQuestion){
+        if(lastQuestion == null)
+            return false
+        for(Answer a : lastQuestion.answers){
+            if(Boolean.logicalXor((boolean)params.get("answer"+a.id), a.isCorrect)){
+                return false
+            }
+        }
+        return true
     }
 }
