@@ -13,7 +13,7 @@ let qId = questionId.substr(8);
 cloned.innerHTML =
     `<td style="text-align: right; vertical-align: middle"><b>Answer ${id}:</b></td>
      <td><input type="text" name="answer${id}-${qId}" class="form-control" /></td>
-     <td><input type="checkbox" name="answer${id}-${qId}" /></td>`;
+     <td><input type="checkbox" name="checkbox${id}-${qId}" /></td>`;
 
 divAnswersFg.appendChild(cloned);
 }
@@ -41,7 +41,7 @@ function addQuestion(){
                     <tr>
                         <td style="text-align: right; vertical-align: middle"><b>Answer 1:</b></td>
                         <td><input type="text" name="answer1-fg${id}" class="form-control" /></td>
-                        <td><input type="checkbox" name="answer1-fg${id}" /></td>
+                        <td><input type="checkbox" name="checkbox1-fg${id}" /></td>
                     </tr>
                     <tr>
                         <td style="text-align: right; vertical-align: middle"><b>Answer 2:</b></td>
