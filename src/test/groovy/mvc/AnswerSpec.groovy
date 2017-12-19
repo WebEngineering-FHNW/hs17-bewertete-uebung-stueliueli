@@ -8,15 +8,24 @@ import spock.lang.Specification
  */
 @TestFor(Answer)
 class AnswerSpec extends Specification {
-
+    Answer aFalse,aTrue,aTrue2
     def setup() {
+        aFalse = new Answer(answer: "Answer1", isCorrect: false)
+        aTrue = new Answer(answer: "Answer2", isCorrect: true)
+        aTrue2 = new Answer(answer: "Answer3", isCorrect: true)
     }
 
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "test correct instantiation"(){
+        expect:
+            !aFalse.isCorrect
+            aTrue.isCorrect
+            aTrue2.isCorrect
+            aTrue.isCorrect == aTrue2.isCorrect
+            aFalse.answer == "Answer1"
+            aTrue.answer == "Answer2"
+            aTrue2.answer == "Answer3"
     }
 }
