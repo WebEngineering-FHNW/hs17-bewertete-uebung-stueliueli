@@ -13,13 +13,16 @@ class SocrativeLightController {
         Room room = Room.get(i)
         int numCorrect = intParam(params, 'numCorrect')
 
-        int qId = intParam(params, 'questionId') + 1
+        int qId = intParam(params, 'questionId')
         if(room){
-            boolean isCorrect = checkForCorrectInput(params, Question.get(qId - 1))
+            Question q = null
+            if(qId - 1 >= 0)
+                q = room.questions.get(qId - 1)
+            boolean isCorrect = checkForCorrectInput(params, q)
             if(isCorrect)
                 numCorrect++
 
-            if(qId > room.questions.size()){
+            if(qId >= room.questions.size()){
                 render view:"quizFinished",
                         model:[name:room.name,
                                numCorrect:numCorrect,
@@ -29,7 +32,7 @@ class SocrativeLightController {
                 render view:"view",
                         model:[name:room.name,
                                roomId:room.id,
-                               question:room.questions.get(qId - 1),
+                               question:room.questions.get(qId++),
                                qId:qId,
                                numCorrect: numCorrect,
                                lastCorrect: isCorrect]
