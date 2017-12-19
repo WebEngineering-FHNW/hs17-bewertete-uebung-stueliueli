@@ -11,4 +11,8 @@ class Question {
     static mapping = {
         question type: "text"
     }
+
+    int getSumChosen(){
+        return answers.stream().mapToInt{c -> c.numChosen}.sum()
+    }
 }

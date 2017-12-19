@@ -19,6 +19,8 @@ class SocrativeLightController {
             if(qId - 1 >= 0)
                 q = room.questions.get(qId - 1)
             boolean isCorrect = checkForCorrectInput(params, q)
+            if(q)
+                q.save(flush:true)
             if(isCorrect)
                 numCorrect++
 
@@ -44,6 +46,12 @@ class SocrativeLightController {
 
     def create(){
         render view:"create"
+    }
+
+    def statistics(){
+        int roomId = intParam(params,'roomId')
+        Room r = Room.get(roomId)
+        render view:"statistics", model:[room: r]
     }
 
     def save(){
@@ -87,11 +95,14 @@ class SocrativeLightController {
     boolean checkForCorrectInput(params, Question lastQuestion){
         if(lastQuestion == null)
             return false
+        boolean isCorrect = true
         for(Answer a : lastQuestion.answers){
-            if(Boolean.logicalXor((boolean)params.get("answer"+a.id), a.isCorrect)){
-                return false
-            }
+            boolean isChosen = (boolean)params.get("answer"+a.id)
+            if(isChosen)
+                a.numChosen++
+            if(Boolean.logicalXor(isChosen, a.isCorrect))
+                isCorrect = false
         }
-        return true
+        return isCorrect
     }
 }

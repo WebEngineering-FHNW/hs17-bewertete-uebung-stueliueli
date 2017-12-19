@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <asset:stylesheet src="application.css"/>
+    <asset:javascript src="jquery-2.2.0.min.js" />
+    <asset:javascript src="application.js" />
 
     <g:layoutHead/>
 </head>

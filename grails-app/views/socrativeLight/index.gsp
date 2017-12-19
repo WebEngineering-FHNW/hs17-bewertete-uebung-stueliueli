@@ -19,7 +19,7 @@
                         <td>${it.name}</td>
                         <td>${it.questions.size()}</td>
                         <td><g:link controller="socrativeLight" action="view" params="[roomId:it.id, questionId:0, numCorrect:0]">Start</g:link></td>
-                        <td><g:link controller="socrativeLight" action="stats" params="[roomId:it.id]">Statistics</g:link></td>
+                        <td><g:link controller="socrativeLight" action="statistics" params="[roomId:it.id]">Statistics</g:link></td>
                     </tr>
                 </g:each>
             </tbody>
