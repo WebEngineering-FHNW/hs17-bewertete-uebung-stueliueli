@@ -29,7 +29,8 @@ class SocrativeLightController {
                         model:[name:room.name,
                                numCorrect:numCorrect,
                                numQuestions:room.questions.size(),
-                               lastCorrect: isCorrect]
+                               lastCorrect: isCorrect,
+                               roomId: room.id]
             }else{
                 render view:"view",
                         model:[name:room.name,
@@ -104,5 +105,9 @@ class SocrativeLightController {
                 isCorrect = false
         }
         return isCorrect
+    }
+
+    def description(){
+        render view:"description"
     }
 }

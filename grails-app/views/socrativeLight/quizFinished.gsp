@@ -21,8 +21,11 @@
         </script>
     </head>
     <body>
-        <h1>You're done!</h1>
-        <p>Your score: ${numCorrect}/${numQuestions}</p>
-        <p>You may now return to the <g:link controller="socrativeLight" action="index">starting page</g:link></p>
+        <div style="padding: 2%;">
+            <h1>You're done!</h1>
+            <p>Your score: ${numCorrect}/${numQuestions}</p>
+            <p>You may now return to the <g:link controller="socrativeLight" action="index">starting page</g:link></p>
+            <p>You may also check the <g:link controller="socrativeLight" action="statistics" params="[roomId:roomId]">statistics</g:link> for this questionnaire.</p>
+        </div>
     </body>
 </html>
