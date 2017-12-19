@@ -12,9 +12,9 @@
     </head>
     <body>
         <div class="content">
-            <g:form controller="socrativeLight" action="save" class="form-inline">
+            <g:form controller="socrativeLight" action="save">
                 <div class="form-group">
-                    <label for="nameInput">Name:</label><input class="form-control form-control-small" type="text" name="name" id="nameInput"/>
+                    <label for="nameInput">Name of questionnaire:</label><input class="form-control form-control-small" type="text" name="name" id="nameInput"/>
                 </div>
                 <hr>
                 <div id="form-groups"></div>
