@@ -58,4 +58,17 @@ class QuestionSpec extends Specification {
             q1.answers.size() == 0
 
     }
+
+    void "test getSumChosen"(){
+        expect:
+            q1.answers.size() == 0
+            q1.getSumChosen() == 0
+        when:
+            Answer a1 = new Answer(answer: "Answer1", isCorrect: true, numChosen: 5)
+            Answer a2 = new Answer(answer: "Answer2", isCorrect: false, numChosen: 4)
+            q1.answers.add(a1)
+            q1.answers.add(a2)
+        then:
+            q1.getSumChosen() == 9
+    }
 }

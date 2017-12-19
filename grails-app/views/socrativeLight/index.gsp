@@ -29,7 +29,7 @@
             Create your own questionaire!
         </g:link>
         <g:link controller="socrativeLight" action="description" class="btn btn-success" style="text-decoration: none; margin-top: 2em; margin-left: 80%;">
-            Documentation
+            Description of the Project
         </g:link>
     </body>
 </html>
