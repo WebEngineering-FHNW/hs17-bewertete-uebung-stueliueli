@@ -7,4 +7,8 @@ class Room {
     static constraints = {
         name blank: false, unique: true
     }
+
+    static mapping = {
+        name type: "text"
+    }
 }

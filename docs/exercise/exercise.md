@@ -15,6 +15,7 @@ confirmed.
 ## Project delivery <to be filled by student>
 
 How to start the project: (if other than `grailsw run-app`)
+>Note: Usage of modern browsers required. This application uses ECMAScript Version 6, which is supported in all modern browsers (but not for example in MS Internet Explorer).
 
 How to test the project:  (if other than `grailsw test-app`)
 

@@ -7,4 +7,8 @@ class Question {
     static constraints = {
         question blank: false
     }
+
+    static mapping = {
+        question type: "text"
+    }
 }

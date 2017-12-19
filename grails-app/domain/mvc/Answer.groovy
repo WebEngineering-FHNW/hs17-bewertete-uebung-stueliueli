@@ -7,4 +7,8 @@ class Answer {
     static constraints = {
         answer blank: false
     }
+
+    static mapping = {
+        answer type: "text"
+    }
 }

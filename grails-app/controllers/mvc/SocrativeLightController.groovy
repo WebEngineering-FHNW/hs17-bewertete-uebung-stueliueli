@@ -8,9 +8,16 @@ class SocrativeLightController {
     }
 
     def view(){
-        String roomName = params.get('roomName')
-        Room room = Room.findByName(roomName)
-        render view:"view", model:[room:room]
+        String roomId = params.get('roomId')
+        int i = Integer.parseInt(roomId)
+
+        Room room = Room.get(i)
+        int qId = Integer.parseInt(params.get('questionId')) + 1
+        if(room){
+            render view:"view", model:[name:room.name,question:room.questions.get(qId - 1),qId:qId]
+        }else{
+            render view:"/error"
+        }
     }
 
     def create(){
@@ -37,5 +44,6 @@ class SocrativeLightController {
         }
 
         room.save(flush:true,failOnError:true)
+        redirect(action: "index")
     }
 }

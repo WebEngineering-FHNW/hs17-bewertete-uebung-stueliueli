@@ -1,0 +1,35 @@
+* {
+    color: black;
+}
+body {
+    font-size: 16px;
+}
+
+input {
+    margin: 5px;
+}
+
+.content {
+    padding: 1%;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+button {
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.form-control-small{
+    width: 30%;
+}
+
+.form-control-wide {
+    width: 100%;
+}

@@ -1,23 +1,26 @@
 <html>
     <head>
         <meta name="layout" content="main" />
+        <asset:javascript src="jquery-2.2.0.min.js" />
         <asset:javascript src="form_controls.js"/>
+        <asset:stylesheet src="own.css" />
+        <script>
+            $(document).ready(function () {
+                addQuestion();
+            })
+        </script>
     </head>
     <body>
-        <g:form controller="socrativeLight" action="save">
-            Name: <input type="text" name="name" /><br><br>
-            <div id="form-groups">
-                <div id="formgroup-1" class="form-group">
-                    Question: <input type="text" name="question-fg1" /><br>
-                    <div id="answers-fg1">
-                        <div id="answer1">
-                            Answer 1: <input type="text" name="answer1-fg1" /><input type="checkbox" name="checkbox1-fg1" /><br>
-                        </div>
-                    </div>
-                    <button onclick="addAnswer('answers-fg1')" type="button">Add Answer</button>
+        <div class="content">
+            <g:form controller="socrativeLight" action="save" class="form-inline">
+                <div class="form-group">
+                    <label for="nameInput">Name:</label><input class="form-control form-control-small" type="text" name="name" id="nameInput"/>
                 </div>
-            </div>
-            <button onclick="addQuestion()" type="button">Add Question</button>
-        </g:form>
+                <hr>
+                <div id="form-groups"></div>
+                <button onclick="addQuestion()" type="button" class="btn btn-default">Add Question</button>
+                <button type="submit" name="submit" class="btn btn-success">Save</button>
+            </g:form>
+        </div>
     </body>
 </html>
