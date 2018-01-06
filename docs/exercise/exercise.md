@@ -33,4 +33,27 @@ I'm particular proud of: Being able to dynamically add more questions and answer
 
 ## Project grading 
 
-< to be filled by lecturer>
+Description: given as part of the app, valid html.
+The application works fine.
+
+Validation occurs as part of saving to the database but not as part of the UI
+such that e.g. trying to save without providing any content leads to ValidationException at
+SocrativeLightController:77.
+Functionality includes CRUD operations on the domain plus reporting.
+
+Engineering:
+Git log is a bit sparse (mostly committed the last day) but still ok.
+Comments are almost entirely missing. 
+Naming: the name "Room" is a bit surprising. A comment about it might have helped.
+Good use of Web MVC. Very good testing.
+
+Since we already hit the ceiling, I spare the effort of grading extra points.
+
+Congratulations!
+You created a really nice, distributed, multi-user, DB-backed web application all by yourself 
+with dynamic behavior and some interesting use of JavaScript.
+Many professional developers would have found it difficult 
+to achieve the same in the given time frame.
+
+Total grade: 6.0
+
